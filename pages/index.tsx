@@ -28,66 +28,7 @@ const Objects = [
 ];
 
 const index: FC = () => {
-  const router = useRouter();
-  const [next, setNext] = useState(0);
-  const [change, setChange] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setChange(true);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleClick = () => {
-    if (next === 2) {
-      router.push("/dashboard");
-    } else {
-      setNext(next + 1);
-    }
-  };
-
-  const handleSkip = () => {
-    router.push("/dashboard");
-  };
-
-  return (
-    <Flex
-      sx={{
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Flex
-        sx={{
-          width: 360,
-          height: 680,
-        }}
-      >
-        <Flex
-          sx={{
-            position: "absolute",
-            width: 360,
-            height: 680,
-            opacity: change ? 0 : 1,
-            transition: "all 1.5s ease-in-out 0s",
-            zIndex: change ? -1 : 1,
-          }}
-        >
-          <Image src="/images/covid.png" alt="image" />
-        </Flex>
-
-        {change && (
-          <Boarding
-            object={Objects[next]}
-            onClick={handleClick}
-            onSkip={handleSkip}
-          />
-        )}
-      </Flex>
-    </Flex>
-  );
+  return <Flex>ahihi</Flex>;
 };
 
 export default index;
